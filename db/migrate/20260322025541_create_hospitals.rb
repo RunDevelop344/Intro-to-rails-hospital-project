@@ -1,0 +1,14 @@
+class CreateHospitals < ActiveRecord::Migration[8.1]
+  def change
+    create_table :hospitals do |t|
+      t.string :name
+      t.string :address
+      t.string :city
+      t.string :phone
+      t.float :latitude
+      t.float :longitude
+
+      t.timestamps
+    end
+  end
+end
