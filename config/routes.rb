@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "doctors/index"
+  get "doctors/show"
   get "hospitals/index"
   get "hospitals/show"
   get "about", to: "pages#about", as: :about
