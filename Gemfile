@@ -11,6 +11,8 @@ gem "kaminari"
 
 gem "bootstrap", "~> 5.3.2"
 
+gem "sassc-rails"
+
 gem "jquery-rails"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", ">= 2.1"
