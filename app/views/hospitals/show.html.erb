@@ -1,2 +1,36 @@
-<h1>Hospitals#show</h1>
-<p>Find me in app/views/hospitals/show.html.erb</p>
+<h1><%= @hospital.name %></h1>
+
+<p><strong>City:</strong> <%= @hospital.city %></p>
+<p><strong>Address:</strong> <%= @hospital.address %></p>
+<p><strong>Phone:</strong> <%= @hospital.phone %></p>
+
+<hr>
+
+<h2>Departments</h2>
+<ul>
+  <% @hospital.departments.each do |dept| %>
+    <li><%= dept.name %></li>
+  <% end %>
+</ul>
+
+<h2>Doctors</h2>
+<ul>
+  <% @hospital.doctors.each do |doc| %>
+    <li>
+      <%= doc.name %> — <%= doc.specialty %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Reviews</h2>
+<ul>
+  <% @hospital.reviews.each do |review| %>
+    <li>
+      ⭐ <%= review.rating %> — <%= review.comment %>
+    </li>
+  <% end %>
+</ul>
+
+<p>
+  <%= link_to "Back to Hospitals", hospitals_path %>
+</p>
