@@ -1,14 +1,16 @@
 class HospitalsController < ApplicationController
- def index
-  if params[:query].present?
-    @hospitals = Hospital.where(
-      "name LIKE ? OR city LIKE ?",
-      "%#{params[:query]}%",
-      "%#{params[:query]}%"
-    )
-  else
-    @hospitals = Hospital.all
-    end
+  def index
+    hospitals = if params[:query].present?
+                  Hospital.where(
+                    "name LIKE ? OR city LIKE ?",
+                    "%#{params[:query]}%",
+                    "%#{params[:query]}%"
+                  )
+                else
+                  Hospital.all
+                end
+
+    @hospitals = hospitals.page(params[:page]).per(9)
   end
 
   def show
