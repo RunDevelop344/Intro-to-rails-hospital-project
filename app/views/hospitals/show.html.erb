@@ -31,6 +31,17 @@
   <% end %>
 </ul>
 
+<h2>Location</h2>
+
+<iframe
+  width="100%"
+  height="400"
+  style="border:0"
+  loading="lazy"
+  allowfullscreen
+  src="https://maps.google.com/maps?q=<%= @hospital.latitude %>,<%= @hospital.longitude %>&z=15&output=embed">
+</iframe>
+
 <p>
   <%= link_to "Back to Hospitals", hospitals_path %>
 </p>
