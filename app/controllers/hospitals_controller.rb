@@ -1,6 +1,7 @@
 class HospitalsController < ApplicationController
-  def index
-  end
+ def index
+  @hospitals = Hospital.all
+end
 
   def show
   end
