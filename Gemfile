@@ -8,6 +8,10 @@ gem "propshaft"
 gem 'faker'
 
 gem "kaminari"
+
+gem "bootstrap", "~> 5.3.2"
+
+gem "jquery-rails"
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", ">= 2.1"
 # Use the Puma web server [https://github.com/puma/puma]
