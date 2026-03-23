@@ -1,15 +1,23 @@
+<div class="container">
+  <h1 class="mb-4">Hospitals</h1>
 
-<h1>Hospitals</h1>
+  <div class="row">
+    <% @hospitals.each do |hospital| %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= link_to hospital.name, hospital_path(hospital) %>
+            </h5>
 
-<% @hospitals.each do |hospital| %>
-  <div style="margin-bottom: 20px;">
-    <h3>
-      <%= link_to hospital.name, hospital_path(hospital) %>
-    </h3>
-
-    <p><strong>City:</strong> <%= hospital.city %></p>
-    <p><strong>Address:</strong> <%= hospital.address %></p>
-    <p><strong>Phone:</strong> <%= hospital.phone %></p>
+            <p class="card-text">
+              <strong>City:</strong> <%= hospital.city %><br>
+              <strong>Address:</strong> <%= hospital.address %><br>
+              <strong>Phone:</strong> <%= hospital.phone %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
-
+</div>
