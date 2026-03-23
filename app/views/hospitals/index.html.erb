@@ -1,6 +1,21 @@
 <div class="container">
   <h1 class="mb-4">Hospitals</h1>
 
+  <!--  SEARCH BAR -->
+  <form method="get" action="<%= hospitals_path %>" class="mb-4">
+    <div class="input-group">
+      <input type="text" name="query"
+             class="form-control"
+             placeholder="Search by name or city"
+             value="<%= params[:query] %>">
+
+      <button class="btn btn-primary" type="submit">
+        Search
+      </button>
+    </div>
+  </form>
+
+  <!--  HOSPITAL CARDS -->
   <div class="row">
     <% @hospitals.each do |hospital| %>
       <div class="col-md-4 mb-4">
